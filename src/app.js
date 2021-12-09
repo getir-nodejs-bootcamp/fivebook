@@ -10,5 +10,5 @@ app.use(express.json());
 
 app.listen(process.env.PORT, () => {
   app.use("/", UserRoutes);
-  app.use("/login", BlogRoutes);
+  app.use("/blog", BlogRoutes);
 });

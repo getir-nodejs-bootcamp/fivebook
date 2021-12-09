@@ -1,6 +1,5 @@
 const hs = require("http-status");
 const Blog = require("../models/Blog");
-const User = require("../models/User");
 
 const list = () => {
   return new Promise((resolve, reject) => {
