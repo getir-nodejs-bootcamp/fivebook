@@ -12,7 +12,7 @@ const register = (data) => {
             statusCode: hs.INTERNAL_SERVER_ERROR,
             message: "User has not been registered.",
           });
-        resolve({ statusCode: hs.OK, user: createdUser });
+        else resolve({ statusCode: hs.OK, user: createdUser });
       })
       .catch((e) => {
         reject({
@@ -40,7 +40,7 @@ const login = (credentials) => {
 
 // TODO: add hash algorithm for passwords.
 const checkLogin = (credentials) => {
-  const user = User.find((us) => us.name === credentials.name);
+  const user = User.find((us) => us.user_name === credentials.user_name);
   if (user) return credentials.password === user.password;
   return false;
 };
